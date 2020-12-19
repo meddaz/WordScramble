@@ -2,7 +2,7 @@ var $ = document.querySelector.bind(document),
   $scrambledWord = $("#scrambledWord"),
   $attempt = $("#attempt"),
   $display = $("#display"),
-  words = ["the",  "and",  "you", "that",  "was", "for", "are", "with", "his", "they",  "this", "have", "from", "one", "had", "word", "but", "not", "what", "all", "were", "when", "your", "can", "said", "there", "use", "each", "which", "she",  "how", "their", "will", "other", "about", "out", "many", "then", "them", "these", "some", "her", "would", "make", "like", "him", "into", "time", "has", "look", "two", "more", "write", "see", "number", "way", "could", "people", "than", "first", "water", "been", "call", "who", "oil", "its", "now", "find", "long", "down", "day", "get", "come", "made", "may", "part"],
+  words = ["shape", "yes", "hot", "miss", "brought", "heat", "snow", "bring", "place", "work", "side", "part", "back", "through","the",  "and",  "you", "that",  "was", "for", "are", "with", "his", "they",  "this", "have", "from", "one", "had", "word", "but", "not", "what", "all", "were", "when", "your", "can", "said", "there", "use", "each", "which", "she",  "how", "their", "will", "other", "about", "out", "many", "then", "them", "these", "some", "her", "would", "make", "like", "him", "into", "time", "has", "look", "two", "more", "write", "see", "number", "way", "could", "people", "than", "first", "water", "been", "call", "who", "oil", "its", "now", "find", "long", "down", "day", "get", "come", "made", "may", "part"],
   correct = null;
 
 $("#new-game-btn").addEventListener('click', resetGame);
@@ -27,7 +27,11 @@ var guesses = 0;
 function guess() {
   var answer = $attempt.value;
   if (answer === correct) {
-    $display.innerHTML = "Correct";
+    container.innerHTML = 
+    `  Correct!
+    <br>
+    <button onclick="window.location.reload()">New Word</button>`;
+  
   }
   else {
     $display.innerHTML = "Incorrect";
@@ -38,12 +42,12 @@ function guess() {
 container.innerHTML = 
 
 
-  ` 
+  `
    Game Over
   <br>
 The correct word was ${correct}
 
 <br>
-  <button onclick="window.location.reload()">Reload</button>`;
+  <button onclick="window.location.reload()">New Word</button>`;
 }
 }
